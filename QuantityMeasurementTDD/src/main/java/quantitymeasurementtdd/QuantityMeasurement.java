@@ -1,12 +1,9 @@
 package quantitymeasurementtdd;
 
-public class QuantityMeasurement {
-    public boolean compareQuantity(double feet, double inches) {
-        double feetToInches = this.feetToInches(feet);
-        return feetToInches == inches;
-    }
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
-    private double feetToInches(double feet) {
-        return feet * 12;
-    }
+public class QuantityMeasurement {
+    BiFunction<Double, Double, Boolean> compareQuantity = (feet, inches) -> this.feetToInches.apply(feet).equals(inches);
+    Function<Double, Double> feetToInches = feet -> feet * 12;
 }

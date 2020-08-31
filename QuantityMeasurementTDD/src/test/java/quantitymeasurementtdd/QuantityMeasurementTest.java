@@ -14,19 +14,19 @@ public class QuantityMeasurementTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         quantityMeasurement = new QuantityMeasurement();
     }
 
     @Test
     public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect() {
-        boolean result = quantityMeasurement.compareQuantity(1, 12);
+        boolean result = quantityMeasurement.compareQuantity.apply(1.00, 12.00);
         Assert.assertTrue(result);
     }
 
     @Test
-    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnFasleIfIncorrect() {
-        boolean result = quantityMeasurement.compareQuantity(1, 10);
+    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect() {
+        boolean result = quantityMeasurement.compareQuantity.apply(1.00, 10.00);
         Assert.assertFalse(result);
     }
 }
