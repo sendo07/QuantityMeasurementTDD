@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantitymeasurementtdd.QuantityMeasurementTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-08-31T23:13:25" hostname="Sendo" time="0.002">
+<testsuite name="quantitymeasurementtdd.QuantityMeasurementTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-09-02T05:34:24" hostname="Sendo" time="0.004">
   <properties/>
-  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.001"/>
-  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given0Inchand1Inch_ShouldReturnNotEquals" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.002"/>
+  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="given0Feetand1Feet_ShouldReturnNotEqual" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given0Inchand0Inch_ShouldReturnEquals" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given0Feetand0Feet_ShouldReturnEqual" classname="quantitymeasurementtdd.QuantityMeasurementTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
