@@ -1,17 +1,14 @@
 package quantitymeasurementtdd;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+@Getter
+@EqualsAndHashCode
 public class Inch {
     private double value;
 
     public Inch(double value) {
         this.value = value;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Inch inch = (Inch) o;
-        return Double.compare(inch.value, value) == 0;
     }
 }
