@@ -7,11 +7,13 @@ import java.util.function.Function;
 
 @Getter
 @EqualsAndHashCode
-public class Feet {
+public class Length {
 
+    private Unit unit;
     private double value;
 
-    public Feet(double value) {
+    public Length(Unit unit, double value) {
+        this.unit = unit;
         this.value = value;
     }
 
