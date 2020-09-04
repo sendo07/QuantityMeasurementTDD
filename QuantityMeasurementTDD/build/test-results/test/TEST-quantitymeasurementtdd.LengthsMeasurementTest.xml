@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="quantitymeasurementtdd.LengthsMeasurementTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-04T13:04:47" hostname="Sendo" time="0.005">
-  <properties/>
-  <testcase name="given1FeetAnd1Feet_WhenCompared_ShouldReturnEqualLength" classname="quantitymeasurementtdd.LengthsMeasurementTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

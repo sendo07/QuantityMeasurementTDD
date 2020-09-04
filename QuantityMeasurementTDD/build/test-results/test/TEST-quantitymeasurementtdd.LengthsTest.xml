@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantitymeasurementtdd.LengthsTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2020-09-04T14:18:11" hostname="Sendo" time="0.009">
+  <properties/>
+  <testcase name="given2InchesAnd2Cm_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.LengthsTest" time="0.004"/>
+  <testcase name="given0Inchand1Inch_ShouldReturnNotEquals" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given1FeetAnd0Inch_WhenCompared_ShouldReturnNotEqualLength" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given1InchAnd1Yard_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0FeetAnd0Inch_ShouldReturnEqualLength" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="givenLengthInFeetAndYards_WhenCompared_ShouldReturnTrueIfCorrect" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given1YardAnd36Inches_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.LengthsTest" time="0.001"/>
+  <testcase name="given1FeetAnd1Inch_ShouldReturnNotEqual" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given1FeetAnd1Yard_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0Feetand0Feet_WhenCheckingForReference_ShouldReturnNotEquals" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0Feetand1Feet_WhenComparedForType_ShouldReturnEqual" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given2InchesAnd5Cm_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.LengthsTest" time="0.001"/>
+  <testcase name="givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0Feetand1Feet_ShouldReturnNotEqual" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given1FeetAnd1Feet_WhenCompared_ShouldReturnEqualLength" classname="quantitymeasurementtdd.LengthsTest" time="0.001"/>
+  <testcase name="given0Inchand0Inch_ShouldReturnEquals" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0Inchand0Inch_WhenCheckingForReference_ShouldReturnNotEquals" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <testcase name="given0Feetand0Feet_ShouldReturnEqual" classname="quantitymeasurementtdd.LengthsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -10,10 +10,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static quantitymeasurementtdd.Unit.*;
 
-public class LengthsMeasurementTest {
+public class LengthsTest {
 
     private QuantityMeasurement quantityMeasurement;
-    private Length feet1, inch1, yard1;
+    private Length feet1, inch1, yard1, centimeter1;
     
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -154,5 +154,21 @@ public class LengthsMeasurementTest {
         yard1 = new Length(YARD, 1.0);
         boolean checkLengths = quantityMeasurement.compare(inch1, yard1);
         Assert.assertThat(checkLengths, is(true));
+    }
+
+    @Test
+    public void given2InchesAnd5Cm_WhenCompared_ShouldReturnTrue() {
+        inch1 = new Length(INCH, 2.0);
+        centimeter1 = new Length(CENTIMETERS, 5.0);
+        boolean checkLengths = quantityMeasurement.compare(inch1, centimeter1);
+        Assert.assertThat(checkLengths, is(true));
+    }
+
+    @Test
+    public void given2InchesAnd2Cm_WhenCompared_ShouldReturnFalse() {
+        inch1 = new Length(INCH, 2.0);
+        centimeter1 = new Length(CENTIMETERS, 2.0);
+        boolean checkLengths = quantityMeasurement.compare(inch1, centimeter1);
+        Assert.assertThat(checkLengths, is(false));
     }
 }
