@@ -8,12 +8,13 @@ import org.junit.rules.ExpectedException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.Matchers.closeTo;
 import static quantitymeasurementtdd.Unit.*;
 
 public class LengthsTest {
 
     private QuantityMeasurement quantityMeasurement;
-    private Length feet1, inch1, yard1, centimeter1;
+    private Length firstQuantity, secondQuantity;
     
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -134,41 +135,81 @@ public class LengthsTest {
 
     @Test
     public void given1FeetAnd1Yard_WhenCompared_ShouldReturnFalse() {
-        feet1 = new Length(FEET, 1.0);
-        yard1 = new Length(YARD, 1.0);
-        boolean checkLengths = quantityMeasurement.compare(feet1, yard1);
+        firstQuantity = new Length(FEET, 1.0);
+        secondQuantity = new Length(YARD, 1.0);
+        boolean checkLengths = quantityMeasurement.compare(firstQuantity, secondQuantity);
         Assert.assertThat(checkLengths, is(false));
     }
 
     @Test
     public void given1InchAnd1Yard_WhenCompared_ShouldReturnFalse() {
-        inch1 = new Length(INCH, 1.0);
-        yard1 = new Length(YARD, 1.0);
-        boolean checkLengths = quantityMeasurement.compare(inch1, yard1);
+        firstQuantity = new Length(INCH, 1.0);
+        secondQuantity = new Length(YARD, 1.0);
+        boolean checkLengths = quantityMeasurement.compare(firstQuantity, secondQuantity);
         Assert.assertThat(checkLengths, is(false));
     }
 
     @Test
     public void given1YardAnd36Inches_WhenCompared_ShouldReturnFalse() {
-        inch1 = new Length(INCH, 36.0);
-        yard1 = new Length(YARD, 1.0);
-        boolean checkLengths = quantityMeasurement.compare(inch1, yard1);
+        firstQuantity = new Length(INCH, 36.0);
+        secondQuantity = new Length(YARD, 1.0);
+        boolean checkLengths = quantityMeasurement.compare(firstQuantity, secondQuantity);
         Assert.assertThat(checkLengths, is(true));
     }
 
     @Test
     public void given2InchesAnd5Cm_WhenCompared_ShouldReturnTrue() {
-        inch1 = new Length(INCH, 2.0);
-        centimeter1 = new Length(CENTIMETERS, 5.0);
-        boolean checkLengths = quantityMeasurement.compare(inch1, centimeter1);
+        firstQuantity = new Length(INCH, 2.0);
+        secondQuantity = new Length(CENTIMETERS, 5.0);
+        boolean checkLengths = quantityMeasurement.compare(firstQuantity, secondQuantity);
         Assert.assertThat(checkLengths, is(true));
     }
 
     @Test
     public void given2InchesAnd2Cm_WhenCompared_ShouldReturnFalse() {
-        inch1 = new Length(INCH, 2.0);
-        centimeter1 = new Length(CENTIMETERS, 2.0);
-        boolean checkLengths = quantityMeasurement.compare(inch1, centimeter1);
+        firstQuantity = new Length(INCH, 2.0);
+        secondQuantity = new Length(CENTIMETERS, 2.0);
+        boolean checkLengths = quantityMeasurement.compare(firstQuantity, secondQuantity);
         Assert.assertThat(checkLengths, is(false));
+    }
+
+    @Test
+    public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+        firstQuantity = new Length(INCH, 2.00);
+        secondQuantity = new Length(INCH, 2.00);
+        double result = quantityMeasurement.add(firstQuantity, secondQuantity);
+        Assert.assertThat(result, is(closeTo(4.00, 0.0)));
+    }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenTestedWithIncorrectResult_ShouldFail() {
+        firstQuantity = new Length(FEET, 1.00);
+        secondQuantity = new Length(INCH, 2.00);
+        double result = quantityMeasurement.add(firstQuantity, secondQuantity);
+        Assert.assertThat(result, not(closeTo(10.00, 0.0)));
+    }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenAdded_ShouldReturn14Inch() {
+        firstQuantity = new Length(FEET, 1.00);
+        secondQuantity = new Length(INCH, 2.00);
+        double result = quantityMeasurement.add(firstQuantity, secondQuantity);
+        Assert.assertThat(result, is(closeTo(14.00, 0.0)));
+    }
+
+    @Test
+    public void given1FeetAnd1Feet_WhenAdded_ShouldReturn24Inch() {
+        firstQuantity = new Length(FEET, 1.00);
+        secondQuantity = new Length(FEET, 1.00);
+        double result = quantityMeasurement.add(firstQuantity, secondQuantity);
+        Assert.assertThat(result, is(closeTo(24.00, 0.0)));
+    }
+
+    @Test
+    public void givenInchesAndCm_WhenAdded_ShouldReturn3Inch() {
+        firstQuantity = new Length(INCH, 2.00);
+        secondQuantity = new Length(CENTIMETERS, 2.50);
+        double result = quantityMeasurement.add(firstQuantity, secondQuantity);
+        Assert.assertThat(result, is(closeTo(3.00, 0.0)));
     }
 }
