@@ -6,6 +6,7 @@ import lombok.ToString;
 @Getter
 @ToString
 public enum Unit {
+    // CommonBase for Length is Inch
     FEET(12.00),
     INCH(1.00),
     YARD(36.00),
