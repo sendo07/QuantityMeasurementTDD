@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantitymeasurementtdd.VolumesTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-09-04T22:44:42" hostname="Sendo" time="0.002">
+  <properties/>
+  <testcase name="givenGallonAndLitres_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.VolumesTest" time="0.0"/>
+  <testcase name="givenLitresAndMillilitres_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.VolumesTest" time="0.0"/>
+  <testcase name="givenGallonsAndLitres_WhenAdded_ShouldReturnCorrectResult" classname="quantitymeasurementtdd.VolumesTest" time="0.0"/>
+  <testcase name="givenLitreAndMillilitres_WhenAdded_ShouldReturnCorrectResult" classname="quantitymeasurementtdd.VolumesTest" time="0.0"/>
+  <testcase name="givenGallonAndLitres_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.VolumesTest" time="0.0"/>
+  <testcase name="givenLitreAndMillilitres_WhenAddedAndComparedWithWrongResult_ShouldFail" classname="quantitymeasurementtdd.VolumesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -11,6 +11,7 @@ import static quantitymeasurementtdd.Unit.INCH;
 public class QuantityMeasurementExceptionTest {
 
     private QuantityMeasurement quantityMeasurement;
+    private Quantity firstQuantity, secondQuantity;
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -22,9 +23,9 @@ public class QuantityMeasurementExceptionTest {
 
     @Test(expected = QuantityMeasurementException.class)
     public void givenNullValue_ShouldThrowNullPointerException() {
-        Length feet1 = new Length(FEET, null);
-        Length inch2 = new Length(INCH, 1.0);
-        boolean checkForNull = quantityMeasurement.compare(feet1, inch2);
+        firstQuantity = new Quantity(FEET, null);
+        secondQuantity = new Quantity(INCH, 1.0);
+        quantityMeasurement.compare(firstQuantity, secondQuantity);
         expectedException.expectMessage("null");
     }
 }
