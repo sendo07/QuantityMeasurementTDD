@@ -24,28 +24,6 @@ public class QuantityMeasurementTest {
     }
 
     @Test
-    @DisplayName("Should Return True")
-    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect() {
-        Length feet1 = new Length(FEET, 1);
-        Length inch1 = new Length(INCH, 12);
-        boolean feetInInches = feet1
-                                .getFeetInInches.apply(feet1.getValue())
-                                .equals(inch1.getValue());
-        Assert.assertThat(feetInInches, is(true));
-    }
-
-    @Test
-    @DisplayName("Should Return False")
-    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect() {
-        Length feet1 = new Length(FEET, 1);
-        Length inch1 = new Length(INCH, 10);
-        boolean feetInInches = feet1
-                                .getFeetInInches.apply(feet1.getValue())
-                                .equals(inch1.getValue());
-        Assert.assertThat(feetInInches, is(false));
-    }
-
-    @Test
     @DisplayName("Values of the objects should be equal")
     public void given0Feetand0Feet_ShouldReturnEqual() {
         Length feet1 = new Length(FEET, 0.0);
@@ -82,16 +60,16 @@ public class QuantityMeasurementTest {
     @Test
     @DisplayName("Values of the objects should be equal")
     public void given0Inchand0Inch_ShouldReturnEquals() {
-        Length inch1 = new Length(INCH, 0);
-        Length inch2 = new Length(INCH, 0);
+        Length inch1 = new Length(INCH, 0.0);
+        Length inch2 = new Length(INCH, 0.0);
         Assert.assertThat(inch1, is(inch2));
     }
 
     @Test
     @DisplayName("Reference of two objects is not same")
     public void given0Inchand0Inch_WhenCheckingForReference_ShouldReturnNotEquals() {
-        Length inch1 = new Length(INCH, 0);
-        Length inch2 = new Length(INCH, 0);
+        Length inch1 = new Length(INCH, 0.0);
+        Length inch2 = new Length(INCH, 0.0);
         boolean isSameReference = inch1 == inch2;
         Assert.assertThat(isSameReference, is(false));
     }
@@ -99,8 +77,8 @@ public class QuantityMeasurementTest {
     @Test
     @DisplayName("Values of the objects should not be equal")
     public void given0Inchand1Inch_ShouldReturnNotEquals() {
-        Length inch1 = new Length(INCH, 0);
-        Length inch2 = new Length(INCH, 1);
+        Length inch1 = new Length(INCH, 0.0);
+        Length inch2 = new Length(INCH, 1.0);
         Assert.assertThat(inch1, not(inch2));
     }
 
@@ -110,5 +88,60 @@ public class QuantityMeasurementTest {
         Length feet1 = new Length(FEET, 1.0);
         Length inch1 = new Length(INCH, 1.0);
         Assert.assertThat(feet1, not(inch1));
+    }
+
+    @Test
+    @DisplayName("Returns if the Feet Value is equal to the converted length")
+    public void given0FeetAnd0Inch_ShouldReturnEqualLength() {
+        Length feet1 = new Length(FEET, 0.0);
+        Length inch1 = new Length(INCH, 0.0);
+        boolean compareCheck = feet1.compare(inch1);
+        Assert.assertThat(compareCheck, is(true));
+    }
+
+    @Test
+    @DisplayName("Returns false if the object are  not of the same unit")
+    public void given1FeetAnd0Inch_WhenCompared_ShouldReturnNotEqualLength() {
+        Length feet1 = new Length(FEET, 1.0);
+        Length inch1 = new Length(INCH, 1.0);
+        boolean compareCheck = feet1.compare(inch1);
+        Assert.assertThat(compareCheck, is(false));
+    }
+
+    @Test
+    @DisplayName("Returns true if the object are of the same unit and length")
+    public void given1FeetAnd1Feet_WhenCompared_ShouldReturnEqualLength() {
+        Length feet1 = new Length(FEET, 0.0);
+        Length feet2 = new Length(FEET, 0.0);
+        boolean compareCheck = feet1.compare(feet2);
+        Assert.assertThat(compareCheck, is(true));
+    }
+
+
+    @Test
+    @DisplayName("Should Return True")
+    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnTrueIfCorrect() {
+        Length feet1 = new Length(FEET, 1.0);
+        Length inch1 = new Length(INCH, 12.0);
+        boolean feetInInches = quantityMeasurement.compare(feet1, inch1);
+        Assert.assertThat(feetInInches, is(true));
+    }
+
+    @Test
+    @DisplayName("Should Return False")
+    public void givenLengthInFeetAndInches_WhenCompared_ShouldReturnFalseIfIncorrect() {
+        Length feet1 = new Length(FEET, 1.0);
+        Length inch1 = new Length(INCH, 10.0);
+        boolean feetInInches = quantityMeasurement.compare(feet1, inch1);
+        Assert.assertThat(feetInInches, is(false));
+    }
+
+    @Test
+    @DisplayName("Should Return True")
+    public void givenLengthInFeetAndYards_WhenCompared_ShouldReturnTrueIfCorrect() {
+        Length feet1 = new Length(FEET, 3);
+        Length yard1 = new Length(YARD, 1);
+        boolean feetInInches = quantityMeasurement.compare(feet1, yard1);
+        Assert.assertThat(feetInInches, is(true));
     }
 }
