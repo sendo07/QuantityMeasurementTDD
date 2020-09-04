@@ -139,8 +139,8 @@ public class QuantityMeasurementTest {
     @Test
     @DisplayName("Should Return True")
     public void givenLengthInFeetAndYards_WhenCompared_ShouldReturnTrueIfCorrect() {
-        Length feet1 = new Length(FEET, 3);
-        Length yard1 = new Length(YARD, 1);
+        Length feet1 = new Length(FEET, 3.0);
+        Length yard1 = new Length(YARD, 1.0);
         boolean feetInInches = quantityMeasurement.compare(feet1, yard1);
         Assert.assertThat(feetInInches, is(true));
     }

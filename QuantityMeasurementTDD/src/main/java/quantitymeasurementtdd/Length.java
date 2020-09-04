@@ -4,8 +4,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-import java.util.function.Function;
-
 import static quantitymeasurementtdd.Unit.FEET;
 import static quantitymeasurementtdd.Unit.INCH;
 
@@ -18,12 +16,10 @@ public class Length {
     private Unit unit;
     private Double value;
 
-    public Length(Unit unit, double value) {
+    public Length(Unit unit, Double value) {
         this.unit = unit;
         this.value = value;
     }
-
-    public Function<Double, Double> getFeetInInches = (value) -> value * 12;
 
     public boolean compare(Length that) {
         if (this.unit.equals(FEET) && that.unit.equals(FEET))
