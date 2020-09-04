@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantitymeasurementtdd.WeightsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-09-04T23:19:03" hostname="Sendo" time="0.001">
+  <properties/>
+  <testcase name="givenKilogramAndGrams_WhenCompared_ShouldReturnFalse" classname="quantitymeasurementtdd.WeightsTest" time="0.0"/>
+  <testcase name="givenKilogramAndGrams_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.WeightsTest" time="0.0"/>
+  <testcase name="givenKilogramAndTonne_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.WeightsTest" time="0.0"/>
+  <testcase name="givenTonneAndGrams_WhenAdded_ShouldReturnCorrectResult" classname="quantitymeasurementtdd.WeightsTest" time="0.0"/>
+  <testcase name="givenTonneAndGrams_WhenAddedAndComparedWithIncorrectValue_ShouldFail" classname="quantitymeasurementtdd.WeightsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
