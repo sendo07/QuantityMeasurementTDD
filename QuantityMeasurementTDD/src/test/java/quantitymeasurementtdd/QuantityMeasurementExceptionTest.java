@@ -21,7 +21,7 @@ public class QuantityMeasurementExceptionTest {
     }
 
     @Test(expected = QuantityMeasurementException.class)
-    public void givenNullValues_ShouldThrowNullPointerException() {
+    public void givenNullValue_ShouldThrowNullPointerException() {
         Length feet1 = new Length(FEET, null);
         Length inch2 = new Length(INCH, 1.0);
         boolean checkForNull = quantityMeasurement.compare(feet1, inch2);
