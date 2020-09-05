@@ -10,6 +10,8 @@ public class QuantityMeasurement implements InQuantityMeasurement {
     @Override
     public boolean compare(Quantity quantity1, Quantity quantity2) throws QuantityMeasurementException {
         checkException(quantity1, quantity2);
+        if (quantity1.getUnit() == Unit.FAHRENHEIT || quantity2.getUnit() == Unit.CELSIUS)
+           return compareTemperatures(quantity1, quantity2);
         double[] convertedToCommonBase = valuesConvertedToCommonBaseUnit(quantity1, quantity2);
         return Double.compare(Math.round(convertedToCommonBase[0]), Math.round(convertedToCommonBase[1])) == 0;
     }
@@ -24,6 +26,16 @@ public class QuantityMeasurement implements InQuantityMeasurement {
         double value1 = (quantity1.getValue() * quantity1.getUnit().getBaseUnitConversion());
         double value2 = (quantity2.getValue() * quantity2.getUnit().getBaseUnitConversion());
         return new double[] {value1, value2};
+    }
+
+    private boolean compareTemperatures(Quantity quantity1, Quantity quantity2) {
+        double temp1 = fahrenheitToCelsius(quantity1.getValue());
+        double temp2 = quantity2.getValue();
+        return Double.compare(Math.round(temp1), Math.round(temp2)) == 0;
+    }
+
+    private Double fahrenheitToCelsius(Double temp) {
+        return (double) ((temp - 32) * 5 / 9);
     }
 
     private void checkException(Quantity quantity1, Quantity quantity2) {

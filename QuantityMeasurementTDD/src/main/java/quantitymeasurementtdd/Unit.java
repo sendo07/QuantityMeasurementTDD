@@ -20,7 +20,11 @@ public enum Unit {
     // CommonBaseUnit for Volumes is Kilograms
     KILOGRAM(1.00),
     GRAM(0.001),
-    TONNE(1000.00);
+    TONNE(1000.00),
+
+    // CommonBAseUnit for Temperature is Celsius
+    FAHRENHEIT(0.00),
+    CELSIUS(0.00);
 
     private final Double baseUnitConversion;
 
