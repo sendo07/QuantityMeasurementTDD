@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="quantitymeasurementtdd.TemperatureTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-09-05T00:20:49" hostname="Sendo" time="0.0">
+  <properties/>
+  <testcase name="givenFahrenheitAndCelsius_WhenCompared_ShouldReturnTrue" classname="quantitymeasurementtdd.TemperatureTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
